@@ -7,14 +7,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <!--USING CARD TO DISPLAY-->
+    <!--using ngfor to loop through the api-->
+    <ion-card *ngFor="let movie of myMovies">
+      <img alt="movie Poster" src= {{movie.Poster}}/> <!--displays movie poster-->
+      <ion-card-header>
+        <ion-card-title>{{movie.Title}}</ion-card-title><!--displays movie title-->
+        <ion-card-subtitle>{{movie.Year}}</ion-card-subtitle> <!--displays movie year-->
+      </ion-card-header>
+    
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+    </ion-card>
+    
 </ion-content>
